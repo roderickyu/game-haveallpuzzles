@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-white antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaveAllPuzzles - Premium Gaming Collection | 95+ Curated Games</title>
+    <meta name="description" content="Experience the finest collection of 95+ premium puzzle games. Meticulously curated, expertly designed, instantly playable.">
+    <meta name="keywords" content="premium puzzle games, luxury gaming, curated games, professional games collection">
+    <link rel="canonical" href="https://haveallpuzzles.online/">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        'mono': ['ui-monospace', 'SF Mono', 'Monaco', 'Cascadia Code', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        indigo: {
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                        blue: {
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        pink: {
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                        }
+                    },
+                    spacing: {
+                        '112': '28rem',
+                        '120': '30rem',
+                    },
+                    width: {
+                        'md': '28rem',
+                        '120': '30rem',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Premium gradient backgrounds */
+        .premium-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .premium-gradient-alt {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .premium-glass {
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .game-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .game-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .premium-text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Mobile Header -->
+    <header class="lg:hidden bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                        H
+                    </div>
+                    <span class="text-xl font-bold premium-text-gradient">HaveAllPuzzles</span>
+                </div>
+                <button id="mobileMenuBtn" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
+                    <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="hidden lg:hidden fixed inset-0 z-50 bg-black/50">
+        <div class="fixed inset-y-0 left-0 w-80 bg-white shadow-xl transform -translate-x-full transition-transform duration-300" id="mobileMenuPanel">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                            H
+                        </div>
+                        <span class="text-xl font-bold premium-text-gradient">HaveAllPuzzles</span>
+                    </div>
+                    <button id="closeMobileMenu" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
+                        <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Mobile Premium Stats -->
+                <div class="grid grid-cols-3 gap-3 mb-8">
+                    <div class="bg-slate-50 rounded-lg p-3 text-center">
+                        <div class="text-lg font-bold premium-text-gradient">95+</div>
+                        <div class="text-xs font-medium text-slate-600">Games</div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-3 text-center">
+                        <div class="text-lg font-bold premium-text-gradient">100%</div>
+                        <div class="text-xs font-medium text-slate-600">Quality</div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-3 text-center">
+                        <div class="text-lg font-bold premium-text-gradient">0</div>
+                        <div class="text-xs font-medium text-slate-600">Downloads</div>
+                    </div>
+                </div>
+
+                <!-- Mobile Categories -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-slate-900 mb-4">Categories</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer">
+                            <div class="flex items-center">
+                                <div class="text-lg mr-3">🧩</div>
+                                <span class="font-medium text-slate-700">Logic Puzzles</span>
+                            </div>
+                            <span class="text-sm text-slate-500">35</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer">
+                            <div class="flex items-center">
+                                <div class="text-lg mr-3">💎</div>
+                                <span class="font-medium text-slate-700">Match Games</span>
+                            </div>
+                            <span class="text-sm text-slate-500">25</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer">
+                            <div class="flex items-center">
+                                <div class="text-lg mr-3">📝</div>
+                                <span class="font-medium text-slate-700">Word Games</span>
+                            </div>
+                            <span class="text-sm text-slate-500">15</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer">
+                            <div class="flex items-center">
+                                <div class="text-lg mr-3">🧠</div>
+                                <span class="font-medium text-slate-700">Brain Training</span>
+                            </div>
+                            <span class="text-sm text-slate-500">20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Layout -->
+    <div class="flex min-h-screen">
+        <!-- Desktop Sidebar -->
+        <aside class="hidden lg:flex lg:fixed lg:inset-y-0 lg:left-0 lg:w-80 xl:w-96 lg:flex-col bg-white border-r border-slate-200">
+            <!-- Sidebar Content -->
+            <div class="flex-1 overflow-y-auto">
+                <div class="p-8">
+                    <!-- Logo -->
+                    <div class="mb-8">
+                        <a href="/" class="block">
+                            <div class="w-full aspect-square bg-gradient-to-br from-indigo-500 to-pink-600 rounded-2xl shadow-xl flex items-center justify-center text-white">
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold mb-2">🎮</div>
+                                    <div class="text-xl font-bold">HaveAllPuzzles</div>
+                                    <div class="text-sm font-medium opacity-80">Premium Collection</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Brand Description -->
+                    <div class="mb-8">
+                        <h1 class="text-2xl font-bold text-slate-900 mb-3">HaveAllPuzzles</h1>
+                        <p class="text-slate-600 leading-relaxed">
+                            A meticulously curated collection of premium puzzle games. Crafted for the discerning gamer.
+                        </p>
+                    </div>
+
+                    <!-- Premium Stats -->
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="bg-slate-50 rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold premium-text-gradient">95+</div>
+                            <div class="text-xs font-medium text-slate-600">Premium Games</div>
+                        </div>
+                        <div class="bg-slate-50 rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold premium-text-gradient">100%</div>
+                            <div class="text-xs font-medium text-slate-600">Curated Quality</div>
+                        </div>
+                        <div class="bg-slate-50 rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold premium-text-gradient">0</div>
+                            <div class="text-xs font-medium text-slate-600">Download Required</div>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div>
+                        <h2 class="flex items-center font-bold text-slate-900 mb-4">
+                            <svg class="h-4 w-4 fill-indigo-400 mr-2" viewBox="0 0 10 10">
+                                <rect width="2" height="10" x="0" y="0"/>
+                                <rect width="2" height="6" x="3" y="2"/>
+                                <rect width="2" height="8" x="6" y="1"/>
+                            </svg>
+                            Premium Categories
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 cursor-pointer group transition-colors">
+                                <div class="flex items-center">
+                                    <div class="text-lg mr-3">🧩</div>
+                                    <span class="font-medium text-slate-700 group-hover:text-indigo-600 transition-colors">Logic Puzzles</span>
+                                </div>
+                                <span class="text-sm text-slate-500">35 games</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 cursor-pointer group transition-colors">
+                                <div class="flex items-center">
+                                    <div class="text-lg mr-3">💎</div>
+                                    <span class="font-medium text-slate-700 group-hover:text-indigo-600 transition-colors">Match Games</span>
+                                </div>
+                                <span class="text-sm text-slate-500">25 games</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 cursor-pointer group transition-colors">
+                                <div class="flex items-center">
+                                    <div class="text-lg mr-3">📝</div>
+                                    <span class="font-medium text-slate-700 group-hover:text-indigo-600 transition-colors">Word Games</span>
+                                </div>
+                                <span class="text-sm text-slate-500">15 games</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 cursor-pointer group transition-colors">
+                                <div class="flex items-center">
+                                    <div class="text-lg mr-3">🧠</div>
+                                    <span class="font-medium text-slate-700 group-hover:text-indigo-600 transition-colors">Brain Training</span>
+                                </div>
+                                <span class="text-sm text-slate-500">20 games</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-80 xl:ml-96">
+            <!-- Hero Section -->
+            <div class="bg-gradient-to-br from-slate-50 to-indigo-50/30 border-b border-slate-100">
+                <div class="px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+                    <div class="max-w-4xl">
+                        <h1 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-4 animate-fade-in">
+                            Premium Gaming <span class="premium-text-gradient">Collection</span>
+                        </h1>
+                        <p class="text-lg lg:text-xl text-slate-600 mb-8 animate-slide-up max-w-2xl">
+                            Discover our hand-picked selection of 95+ premium puzzle games. Each title carefully chosen for its exceptional quality, innovative gameplay, and engaging design.
+                        </p>
+                        
+                        <!-- Search Bar -->
+                        <div class="relative max-w-lg animate-slide-up">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <svg class="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                            <input id="searchInput" type="text" 
+                                   class="block w-full pl-12 pr-4 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/80 backdrop-blur-sm text-slate-900 placeholder-slate-500 shadow-lg text-lg"
+                                   placeholder="Search premium games...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Games Section -->
+            <div class="px-4 sm:px-6 lg:px-8 py-8">
+                <div class="max-w-7xl">
+                    <!-- Section Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
+                        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 sm:mb-0">Featured Games</h2>
+                        <select id="categoryFilter" class="px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white text-slate-700 font-medium">
+                            <option value="">All Categories</option>
+                            <option value="puzzle">Logic Puzzles</option>
+                            <option value="match">Match Games</option>
+                            <option value="word">Word Games</option>
+                            <option value="brain">Brain Training</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Games Grid -->
+                    <div id="gamesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+                        <!-- Games will be loaded here -->
+                    </div>
+                    
+                    <!-- Load More Button -->
+                    <div class="text-center mt-12">
+                        <button id="loadMoreBtn" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-pink-600 text-white font-semibold rounded-2xl hover:from-indigo-600 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                            Load More Premium Games
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Footer -->
+    <footer class="lg:hidden bg-white border-t border-slate-200 py-8">
+        <div class="px-4 text-center">
+            <div class="flex items-center justify-center mb-4">
+                <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-sm mr-3">H</div>
+                <h3 class="text-xl font-bold text-slate-900">HaveAllPuzzles</h3>
+            </div>
+            <p class="text-slate-600 mb-4">Your premier destination for premium puzzle games.</p>
+            <div class="text-sm text-slate-500">
+                © 2024 HaveAllPuzzles • Premium Collection
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuPanel.classList.remove('-translate-x-full');
+            }, 10);
+        }
+
+        function closeMobileMenuFn() {
+            mobileMenuPanel.classList.add('-translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        mobileMenuBtn?.addEventListener('click', openMobileMenu);
+        closeMobileMenu?.addEventListener('click', closeMobileMenuFn);
+        mobileMenu?.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenuFn();
+            }
+        });
+
+        // Complete premium game database - all 95 games
+        const gameDatabase = [
+  {
+    "name": "2020 Connect",
+    "slug": "2020-connect",
+    "image": "https://4l7qr4mfc8o80.h5games.usercontent.goog/v/5sm797oi4heu0/icons/icon_1920x1080.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/4l7qr4mfc8o80",
+    "description": "An innovative number-connecting puzzle that challenges your strategic thinking and spatial awareness."
+  },
+  {
+    "name": "2048 Giant",
+    "slug": "2048-giant",
+    "image": "https://2048giant.h5games.usercontent.goog/v/4bea87e2-a9a9-4f4b-b1c8-8b777220c567/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/2048giant",
+    "description": "The classic 2048 game reimagined with enhanced graphics, smooth animations, and premium gameplay."
+  },
+  {
+    "name": "2048 Pizza",
+    "slug": "2048-pizza",
+    "image": "https://14qikp6hbljig.h5games.usercontent.goog/v/4htrmkq5b0b78/market/banner-1920x1080-5.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/14qikp6hbljig",
+    "description": "A delicious twist on the classic 2048 formula with mouth-watering pizza-themed graphics."
+  },
+  {
+    "name": "Bee Connect",
+    "slug": "bee-connect",
+    "image": "https://beeconnect.h5games.usercontent.goog/v/06c7e297-3e6d-4512-9fb2-e491ae2b2fb9/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/beeconnect",
+    "description": "Connect the busy bees in this charming puzzle game featuring beautiful nature-inspired visuals."
+  },
+  {
+    "name": "Block Dimension",
+    "slug": "block-dimension",
+    "image": "https://62dfg8ps4f7lg.h5games.usercontent.goog/v/0k3gcfq0ljti8/images/landscape480.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/62dfg8ps4f7lg",
+    "description": "Navigate through dimensional blocks in this mind-bending spatial puzzle adventure."
+  },
+  {
+    "name": "BlockDrop",
+    "slug": "blockdrop",
+    "image": "https://51vi4vae20f8o.h5games.usercontent.goog/v/66bqinuuh36b8/src/assets/art/store/block-drop-h-480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/51vi4vae20f8o",
+    "description": "Master the art of block placement in this sophisticated Tetris-inspired challenge."
+  },
+  {
+    "name": "Blocks Puzzle",
+    "slug": "blocks-puzzle",
+    "image": "https://6ljls661l4lkg.h5games.usercontent.goog/v/1mil2011qbul0/image/blockpuzzle-med-res-banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/6ljls661l4lkg",
+    "description": "A premium block-fitting experience with elegant design and satisfying gameplay mechanics."
+  },
+  {
+    "name": "Brain Trainer",
+    "slug": "brain-trainer",
+    "image": "https://braintrainer.h5games.usercontent.goog/v/4f2ffbc6-4208-4087-bfaf-ab0db086da02/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/braintrainer",
+    "description": "Enhance your cognitive abilities with scientifically-designed brain training exercises."
+  },
+  {
+    "name": "Bricks Breaker",
+    "slug": "bricks-breaker",
+    "image": "https://5enjropk1ren8.h5games.usercontent.goog/v/6u5qapt4kt1j8/marketing/ban-bricksBreaker-480x270.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/5enjropk1ren8",
+    "description": "Demolish colorful brick formations in this action-packed arcade puzzle experience."
+  },
+  {
+    "name": "Bubble Shooter HD",
+    "slug": "bubble-shooter-hd",
+    "image": "https://695vevup4pmu0.h5games.usercontent.goog/v/7ptf20o9mjr48/icons/icon_1920x1080.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/695vevup4pmu0",
+    "description": "Precision bubble shooting with stunning HD graphics and responsive touch controls."
+  },
+  {
+    "name": "Bubble Tower",
+    "slug": "bubble-tower",
+    "image": "https://bubbletower.h5games.usercontent.goog/v/7ebcukaef3voo/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/bubbletower",
+    "description": "Build towering bubble structures while mastering physics-based puzzle mechanics."
+  },
+  {
+    "name": "Bubble Woods Ultimate",
+    "slug": "bubble-woods-ultimate",
+    "image": "https://bubblewoods4.h5games.usercontent.goog/v/4jslovpheann0/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/bubblewoods4",
+    "description": "Explore enchanted forests while solving intricate bubble-matching challenges."
+  },
+  {
+    "name": "Bunny Quest",
+    "slug": "bunny-quest",
+    "image": "https://630h8fcg3e938.h5games.usercontent.goog/v/51qfd4fr90dro/marketing/title/bunnyquest-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/630h8fcg3e938",
+    "description": "Join an adorable bunny on a puzzle adventure through magical woodland levels."
+  },
+  {
+    "name": "Butterfly Shimai",
+    "slug": "butterfly-shimai",
+    "image": "https://1pq2qond4eka0.h5games.usercontent.goog/v/4oiv5e7dd7vd8/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/1pq2qond4eka0",
+    "description": "Match beautiful butterflies in this zen-like puzzle game with serene visuals."
+  },
+  {
+    "name": "Cake Smash",
+    "slug": "cake-smash",
+    "image": "https://41la6sld9ed88.h5games.usercontent.goog/v/36d90atplnu7o/images/horizontal-banner.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/41la6sld9ed88",
+    "description": "Indulge in sweet puzzle action with delectable cake-matching gameplay."
+  },
+  {
+    "name": "Candy Bubbles",
+    "slug": "candy-bubbles",
+    "image": "https://candybubbles.h5games.usercontent.goog/v/370v1t5h5266g/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/candybubbles",
+    "description": "Pop colorful candy bubbles in this sugar-sweet puzzle adventure."
+  },
+  {
+    "name": "Color Pixel Art",
+    "slug": "color-pixel-art",
+    "image": "https://colorpixel.h5games.usercontent.goog/v/6ko86juonaau0/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/colorpixel",
+    "description": "Create stunning pixel masterpieces with guided coloring puzzle mechanics."
+  },
+  {
+    "name": "Cut the Rope",
+    "slug": "cut-the-rope",
+    "image": "https://1cq84l302hpdg.h5games.usercontent.goog/v/601qerqj3lb90/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/1cq84l302hpdg",
+    "description": "Help Om Nom satisfy his sweet tooth in this physics-based puzzle classic."
+  },
+  {
+    "name": "Daily Sudoku",
+    "slug": "daily-sudoku",
+    "image": "https://dailysudoku.h5games.usercontent.goog/v/03446732-f14b-4bcc-9e8b-68fc499a0cec/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/dailysudoku",
+    "description": "Challenge your logic with expertly crafted daily Sudoku puzzles."
+  },
+  {
+    "name": "Daily Word Climb",
+    "slug": "daily-word-climb",
+    "image": "https://7j9i6247552ro.h5games.usercontent.goog/v/1g49kcc7pdiio/images/horizontal480.png=w256?v=1",
+    "category": "word",
+    "iframe": "https://gamesnacks.com/games/7j9i6247552ro",
+    "description": "Ascend to new heights with challenging daily word puzzle adventures."
+  },
+  {
+    "name": "Diamond Rush",
+    "slug": "diamond-rush",
+    "image": "https://diamondrush.h5games.usercontent.goog/v/63ok750qri670/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/diamondrush",
+    "description": "Collect precious gems while solving challenging match-3 puzzles."
+  },
+  {
+    "name": "Dice Puzzle",
+    "slug": "dice-puzzle",
+    "image": "https://0vfcifju4i900.h5games.usercontent.goog/v/2jg90liogd5f8/image/dicepuzzle-med-res-banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/0vfcifju4i900",
+    "description": "Roll the dice strategically in this unique number-placement puzzle game."
+  },
+  {
+    "name": "Diwali Lights",
+    "slug": "diwali-lights",
+    "image": "https://diwalilights.h5games.usercontent.goog/v/5cddqg9lrn3kg/media/graphics/promo/banners/480x270.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/diwalilights",
+    "description": "Illuminate beautiful patterns in this culturally-inspired light puzzle game."
+  },
+  {
+    "name": "Element Blocks",
+    "slug": "element-blocks",
+    "image": "https://elementblocks.h5games.usercontent.goog/v/35up5t7ao24i8/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/elementblocks",
+    "description": "Master elemental block placement with physics-based puzzle mechanics."
+  },
+  {
+    "name": "Emoji Fun",
+    "slug": "emoji-fun",
+    "image": "https://0aijth0is3tko.h5games.usercontent.goog/v/1c1277hq9kr98/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/0aijth0is3tko",
+    "description": "Express yourself with emoji-based puzzle challenges and creative gameplay."
+  },
+  {
+    "name": "Emoji With Friends",
+    "slug": "emoji-with-friends",
+    "image": "https://2gtc787tjm7c8.h5games.usercontent.goog/v/5lfna7ldlrun8/images/horizontal-banner.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/2gtc787tjm7c8",
+    "description": "Social emoji puzzles that bring friends together for collaborative fun."
+  },
+  {
+    "name": "Farm Block Puzzle",
+    "slug": "farm-block-puzzle",
+    "image": "https://5hefbqkv5o0do.h5games.usercontent.goog/v/0bio68l8dojl0/marketing/title/farmblockpuzzle-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/5hefbqkv5o0do",
+    "description": "Cultivate your puzzle skills with charming farm-themed block challenges."
+  },
+  {
+    "name": "Find the Difference",
+    "slug": "find-the-difference",
+    "image": "https://findthedifference.h5games.usercontent.goog/v/0tambv0iojsn8/image/ftd-med-res-banner.jpg=w256?v=1",
+    "category": "brain",
+    "iframe": "https://gamesnacks.com/games/findthedifference",
+    "description": "Sharpen your observation skills with beautifully illustrated spot-the-difference puzzles."
+  },
+  {
+    "name": "Fluffy Mania",
+    "slug": "fluffy-mania",
+    "image": "https://02rd6nna08dqg.h5games.usercontent.goog/v/3ngbs02gf9h88/images/landscape480.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/02rd6nna08dqg",
+    "description": "Cuddle up with adorable fluffy creatures in this heartwarming match-3 adventure."
+  },
+  {
+    "name": "Fruit Cube Blast",
+    "slug": "fruit-cube-blast",
+    "image": "https://5pj67mkaqugmo.h5games.usercontent.goog/v/151if1r687t30/image/FruitCubeBlast-med-res-banner.jpg=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/5pj67mkaqugmo",
+    "description": "Blast through juicy fruit combinations in this explosive puzzle experience."
+  },
+  {
+    "name": "Get 10 Ultimate",
+    "slug": "get-10-ultimate",
+    "image": "https://4oljglvsib9no.h5games.usercontent.goog/v/4nttt72qlep8o/marketing/title/get10ultimate-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/4oljglvsib9no",
+    "description": "Reach the perfect 10 through strategic number combination puzzles."
+  },
+  {
+    "name": "Gym Stack",
+    "slug": "gym-stack",
+    "image": "https://gymstack.h5games.usercontent.goog/v/3js1l1d7rdkfg/images/mid_res_banner.jpeg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/gymstack",
+    "description": "Build muscle and mental strength with fitness-themed stacking puzzles."
+  },
+  {
+    "name": "Hex Puzzle",
+    "slug": "hex-puzzle",
+    "image": "https://blockpuzzle.h5games.usercontent.goog/v/3rkr8c5j9b23o/image/hexpuzzle-med-res-banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/blockpuzzle",
+    "description": "Navigate hexagonal challenges with geometric precision and spatial thinking."
+  },
+  {
+    "name": "Jewel Academy",
+    "slug": "jewel-academy",
+    "image": "https://jewelacademy.h5games.usercontent.goog/v/2krc7uv2m9998/gamesnacks_required_media/JA_horizontal_banner_480x270.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/jewelacademy",
+    "description": "Master the art of gem matching in this beautifully crafted puzzle academy."
+  },
+  {
+    "name": "Jewel Blocks",
+    "slug": "jewel-blocks",
+    "image": "https://jewelblocks.h5games.usercontent.goog/v/0puee6ie0j880/marketing/title/jewelblocks-html5_480x270.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/jewelblocks",
+    "description": "Combine the best of Tetris and match-3 in this innovative jewel experience."
+  },
+  {
+    "name": "Jewel Christmas Mania",
+    "slug": "jewel-christmas-mania",
+    "image": "https://jewelchristmasmania.h5games.usercontent.goog/v/3vom8bn0qgmto/marketing/title/jewelchristmas-html5_480x270.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/jewelchristmasmania",
+    "description": "Celebrate the holidays with festive jewel-matching adventures."
+  },
+  {
+    "name": "Jewel Halloween",
+    "slug": "jewel-halloween",
+    "image": "https://0gk3ormb878mg.h5games.usercontent.goog/v/1qgqb91tuaqv0/marketing/title/jewelhalloween-html5_480x270.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/0gk3ormb878mg",
+    "description": "Spook yourself with thrilling Halloween-themed jewel puzzles."
+  },
+  {
+    "name": "Jewel Legend",
+    "slug": "jewel-legend",
+    "image": "https://jewellegend.h5games.usercontent.goog/v/36cb1hitjsa3o/marketing/title/jewellegend-html5_480x270.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/jewellegend",
+    "description": "Become a legendary jewel master through increasingly challenging levels."
+  },
+  {
+    "name": "Jewel Magic Xmas",
+    "slug": "jewel-magic-xmas",
+    "image": "https://jewelmagicxmas.h5games.usercontent.goog/v/c7f215bc-bcf8-4034-9f0b-246e0909bfa7/med_res_banner.jpg=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/jewelmagicxmas",
+    "description": "Experience magical Christmas moments with enchanting jewel puzzles."
+  },
+  {
+    "name": "Jewel Magic",
+    "slug": "jewel-magic",
+    "image": "https://jewelmagic.h5games.usercontent.goog/v/5e78bdcf-d6ed-4627-ab38-c8e0e647f7dc/med_res_banner.jpg=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/jewelmagic",
+    "description": "Discover the magic within each sparkling gem combination."
+  },
+  {
+    "name": "Jewel Pets Match",
+    "slug": "jewel-pets-match",
+    "image": "https://jewelpetsmatch.h5games.usercontent.goog/v/5dfa5efb-0bdb-49f0-ae73-9fd8ad6b8bc4/med_res_banner.jpg=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/jewelpetsmatch",
+    "description": "Match adorable pets alongside precious jewels in this dual-theme puzzle."
+  },
+  {
+    "name": "Jigsaw Puzzle Deluxe",
+    "slug": "jigsaw-puzzle-deluxe",
+    "image": "https://jigsawpuzzledeluxe.h5games.usercontent.goog/v/5jfat3ipu2790/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/jigsawpuzzledeluxe",
+    "description": "Piece together stunning imagery with premium jigsaw puzzle mechanics."
+  },
+  {
+    "name": "Jigsaw Puzzles Hexa",
+    "slug": "jigsaw-puzzles-hexa",
+    "image": "https://jigsawpuzzleshexa.h5games.usercontent.goog/v/5e9bm1tuf1me0/image/jigsawpuzzleshexa-med-res-banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/jigsawpuzzleshexa",
+    "description": "Revolutionary hexagonal jigsaw puzzles that challenge traditional thinking."
+  },
+  {
+    "name": "Kitty Match",
+    "slug": "kitty-match",
+    "image": "https://kittymatch.h5games.usercontent.goog/v/0fb0j00v75210/images/horizontalBanners_270480.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/kittymatch",
+    "description": "Match cute kittens in this purr-fectly designed puzzle adventure."
+  },
+  {
+    "name": "Letter Links",
+    "slug": "letter-links",
+    "image": "https://7u583tvdi3f00.h5games.usercontent.goog/v/424maigpuljoo/images/letter-links-horizontal-banner-2.png=w256?v=1",
+    "category": "word",
+    "iframe": "https://gamesnacks.com/games/7u583tvdi3f00",
+    "description": "Connect letters to form words in this intelligent vocabulary puzzle game."
+  },
+  {
+    "name": "Mahjong 3D",
+    "slug": "mahjong-3d",
+    "image": "https://mahjong3d.h5games.usercontent.goog/v/eba0837e-4855-4bb2-b762-5dd6d8982cac/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/mahjong3d",
+    "description": "Experience the ancient game of Mahjong in stunning three-dimensional glory."
+  },
+  {
+    "name": "Mahjong Classic",
+    "slug": "mahjong-classic",
+    "image": "https://mahjongclassic.h5games.usercontent.goog/v/6tue6un26r7v0/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/mahjongclassic",
+    "description": "Enjoy the timeless elegance of traditional Mahjong with modern polish."
+  },
+  {
+    "name": "Mahjong Solitaire",
+    "slug": "mahjong-solitaire",
+    "image": "https://4erks8385j9eo.h5games.usercontent.goog/v/1ff4p4m8ilme8/images/mahjong-solitaire-horizontal-banner-2.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/4erks8385j9eo",
+    "description": "Meditate with peaceful Mahjong solitaire featuring beautiful tile designs."
+  },
+  {
+    "name": "Merge Melons",
+    "slug": "merge-melons",
+    "image": "https://mergemelons.h5games.usercontent.goog/v/59jg7dft2iaj0/images/horizontalBanners_19201080.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/mergemelons",
+    "description": "Grow and merge delicious melons in this addictive farming puzzle game."
+  },
+  {
+    "name": "Merge Pirates",
+    "slug": "merge-pirates",
+    "image": "https://mergepirates.h5games.usercontent.goog/v/2rugbh8p4845g/images/mergepirates-horizontal-banner-2.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/mergepirates",
+    "description": "Set sail for adventure with pirate-themed merging puzzle mechanics."
+  },
+  {
+    "name": "Merge the Gems",
+    "slug": "merge-the-gems",
+    "image": "https://mergethegems.h5games.usercontent.goog/v/5rut2fhhuqb1g/promo/1920x1080.jpg=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/mergethegems",
+    "description": "Combine precious stones to create ultimate gem collections."
+  },
+  {
+    "name": "Minesweeper Mania",
+    "slug": "minesweeper-mania",
+    "image": "https://minesweepermania.h5games.usercontent.goog/v/6cje7ufl50e4g/marketing/title/minesweepermania-html5_480x270.png=w256?v=1",
+    "category": "brain",
+    "iframe": "https://gamesnacks.com/games/minesweepermania",
+    "description": "Navigate dangerous minefields with enhanced modern Minesweeper gameplay."
+  },
+  {
+    "name": "Minesweeper",
+    "slug": "minesweeper",
+    "image": "https://minesweeper.h5games.usercontent.goog/v/6uo6tf2lnil3o/image/minesweeper-med-res-banner.jpg=w256?v=1",
+    "category": "brain",
+    "iframe": "https://gamesnacks.com/games/minesweeper",
+    "description": "The classic mine-detection puzzle with premium visual enhancements."
+  },
+  {
+    "name": "Moving Co.",
+    "slug": "moving-co",
+    "image": "https://movingco.h5games.usercontent.goog/v/3crgi5efdnml0/MarketingAssets/Moving_CO_Thumb_Wide_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/movingco",
+    "description": "Organize and pack efficiently in this logistics-based puzzle challenge."
+  },
+  {
+    "name": "Nature Strikes Back",
+    "slug": "nature-strikes-back",
+    "image": "https://79gloe1v4okkg.h5games.usercontent.goog/v/6qlhje6nn2bg0/images/1920_1080_Horizontalbanner.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/79gloe1v4okkg",
+    "description": "Restore natural balance through eco-themed puzzle adventures."
+  },
+  {
+    "name": "Odd One Out",
+    "slug": "odd-one-out",
+    "image": "https://oddoneout.h5games.usercontent.goog/v/50nqosk9lm28o/image/oddoneout-med-res-banner.jpg=w256?v=1",
+    "category": "brain",
+    "iframe": "https://gamesnacks.com/games/oddoneout",
+    "description": "Develop pattern recognition skills with challenging visual puzzle tests."
+  },
+  {
+    "name": "Om Nom Connect Classic",
+    "slug": "om-nom-connect-classic",
+    "image": "https://omnomconnectclassic.h5games.usercontent.goog/v/6bc88dac-9f6b-4f2f-8c85-e715c899bb63/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/omnomconnectclassic",
+    "description": "Connect Om Nom's favorite treats in this adorable puzzle classic."
+  },
+  {
+    "name": "Om Nom Connect Xmas",
+    "slug": "om-nom-connect-xmas",
+    "image": "https://omnomconnectxmas.h5games.usercontent.goog/v/88a6b2cf-1027-4490-a613-9a135cf869ce/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/omnomconnectxmas",
+    "description": "Celebrate Christmas with Om Nom in this festive connection puzzle."
+  },
+  {
+    "name": "Onet Connect Classic",
+    "slug": "onet-connect-classic",
+    "image": "https://onetconnectclassic.h5games.usercontent.goog/v/0q8248mt11l3g/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/onetconnectclassic",
+    "description": "Master the art of tile connection in this elegant pairing puzzle."
+  },
+  {
+    "name": "Parking Rush",
+    "slug": "parking-rush",
+    "image": "https://7nq79vktk8fho.h5games.usercontent.goog/v/4u3a6m3hm9lj8/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/7nq79vktk8fho",
+    "description": "Navigate traffic chaos with strategic vehicle positioning puzzles."
+  },
+  {
+    "name": "Pics Word Game",
+    "slug": "pics-word-game",
+    "image": "https://picswordgame.h5games.usercontent.goog/v/40jujb4uelhb0/image/picswordgame-med-res-banner.jpg=w256?v=1",
+    "category": "word",
+    "iframe": "https://gamesnacks.com/games/picswordgame",
+    "description": "Guess words from pictures in this visual vocabulary challenge."
+  },
+  {
+    "name": "Pin the UFO",
+    "slug": "pin-the-ufo",
+    "image": "https://pintheufo.h5games.usercontent.goog/v/08ukqv01ac45o/images/mid_res_banner.jpeg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/pintheufo",
+    "description": "Guide extraterrestrial visitors safely to Earth in this physics puzzle."
+  },
+  {
+    "name": "Pirate Pop",
+    "slug": "pirate-pop",
+    "image": "https://piratepop.h5games.usercontent.goog/v/3japc2shd35ug/images/pp-horizontal-banner-2.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/piratepop",
+    "description": "Sail the seven seas while popping colorful pirate-themed bubbles."
+  },
+  {
+    "name": "Pirates Match 3",
+    "slug": "pirates-match-3",
+    "image": "https://piratesmatch3.h5games.usercontent.goog/v/fea2f25f-a39a-4273-93c1-38f8f9bd8260/med_res_banner.jpg=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/piratesmatch3",
+    "description": "Embark on treasure-hunting adventures with swashbuckling match-3 action."
+  },
+  {
+    "name": "Poly Art",
+    "slug": "poly-art",
+    "image": "https://polyart.h5games.usercontent.goog/v/47aiosp2dbqgg/marketing/title/polyart-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/polyart",
+    "description": "Create geometric masterpieces with low-poly artistic puzzle designs."
+  },
+  {
+    "name": "PolyMatch",
+    "slug": "polymatch",
+    "image": "https://4h72h3ha1dnh0.h5games.usercontent.goog/v/4mrusdmqik1l8/src/assets/art/store/polyMatch_H_480X270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/4h72h3ha1dnh0",
+    "description": "Match geometric shapes in this sophisticated pattern recognition game."
+  },
+  {
+    "name": "Puzzle Pieces Merge",
+    "slug": "puzzle-pieces-merge",
+    "image": "https://5burcumauc5p0.h5games.usercontent.goog/v/4k8cb35sbe9fo/image/puzzlepieces-med-res-banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/5burcumauc5p0",
+    "description": "Combine puzzle fragments to reveal beautiful completed images."
+  },
+  {
+    "name": "Puzzle Pieces",
+    "slug": "puzzle-pieces",
+    "image": "https://05c9vfh919cbg.h5games.usercontent.goog/v/0ki2bua5asq00/marketing/title/puzzlepieces-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/05c9vfh919cbg",
+    "description": "Traditional jigsaw puzzles with modern digital enhancements."
+  },
+  {
+    "name": "Quest 21",
+    "slug": "quest-21",
+    "image": "https://7h2pln0tgo8q0.h5games.usercontent.goog/v/004k30od8uvog/assets/store/quest-21-h-1080x1920.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/7h2pln0tgo8q0",
+    "description": "Reach the magic number 21 through strategic card-based puzzle gameplay."
+  },
+  {
+    "name": "Quest Bingo",
+    "slug": "quest-bingo",
+    "image": "https://52nk212336l1g.h5games.usercontent.goog/v/0smbj5p2kjk78/assets/store/quest-bingo-h-1080x1920.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/52nk212336l1g",
+    "description": "Embark on bingo adventures with quest-like progression systems."
+  },
+  {
+    "name": "Reversi Mania",
+    "slug": "reversi-mania",
+    "image": "https://reversimania.h5games.usercontent.goog/v/7rhqf6sl8lpf0/marketing/title/reversimania-html5_480x270.png=w256?v=1",
+    "category": "brain",
+    "iframe": "https://gamesnacks.com/games/reversimania",
+    "description": "Master the strategic board game Reversi with enhanced digital features."
+  },
+  {
+    "name": "Roll This Ball 3",
+    "slug": "roll-this-ball-3",
+    "image": "https://rollthisball3.h5games.usercontent.goog/v/0solbal8bgf5g/Marketing/title/rollthisball-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/rollthisball3",
+    "description": "Guide rolling balls through intricate maze puzzle challenges."
+  },
+  {
+    "name": "Santa's Quest",
+    "slug": "santas-quest",
+    "image": "https://santasquest.h5games.usercontent.goog/v/b8891b4c-6b71-4e05-8e46-4a4dc7920520/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/santasquest",
+    "description": "Help Santa deliver presents through Christmas-themed puzzle adventures."
+  },
+  {
+    "name": "Smarty Bubbles 2",
+    "slug": "smarty-bubbles-2",
+    "image": "https://smartybubbles2.h5games.usercontent.goog/v/1u280qojm9oq0/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/smartybubbles2",
+    "description": "Enhanced bubble shooting with intelligent game mechanics."
+  },
+  {
+    "name": "Smarty Bubbles",
+    "slug": "smarty-bubbles",
+    "image": "https://smartybubbles.h5games.usercontent.goog/v/09fhbor6rfpv0/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/smartybubbles",
+    "description": "Precision bubble shooting that rewards strategic thinking."
+  },
+  {
+    "name": "Stars Aligned",
+    "slug": "stars-aligned",
+    "image": "https://starsaligned.h5games.usercontent.goog/v/3i88p78sohtig/media/graphics/promo/banners/480x270.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/starsaligned",
+    "description": "Align celestial bodies in this astronomical puzzle adventure."
+  },
+  {
+    "name": "Sudoku Plus",
+    "slug": "sudoku-plus",
+    "image": "https://sudokuplus.h5games.usercontent.goog/v/3q827iuj6msno/image/sudokuplus-med-res-banner.jpg=w256?v=1",
+    "category": "brain",
+    "iframe": "https://gamesnacks.com/games/sudokuplus",
+    "description": "Advanced Sudoku variants that challenge traditional number placement."
+  },
+  {
+    "name": "Sum 2048",
+    "slug": "sum-2048",
+    "image": "https://2048-v4.h5games.usercontent.goog/v/4fe9a293-323e-4486-8aef-839ab3806c29/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/2048-v4",
+    "description": "Mathematical 2048 gameplay with summation-based mechanics."
+  },
+  {
+    "name": "The Jigsaw Game",
+    "slug": "the-jigsaw-game",
+    "image": "https://2avtkm5bj06f0.h5games.usercontent.goog/v/66fijarm4ldv0/images/horizontal-banner.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/2avtkm5bj06f0",
+    "description": "Premium jigsaw puzzles with photorealistic imagery."
+  },
+  {
+    "name": "The Sea Rush",
+    "slug": "the-sea-rush",
+    "image": "https://thesearush.h5games.usercontent.goog/v/5ie3e5aghbr18/marketing/title/thesearush-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/thesearush",
+    "description": "Dive into oceanic adventures with underwater puzzle challenges."
+  },
+  {
+    "name": "Tile Journey",
+    "slug": "tile-journey",
+    "image": "https://0i1jh8boqif48.h5games.usercontent.goog/v/1643ot8on0v9g/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/0i1jh8boqif48",
+    "description": "Embark on tile-matching journeys through exotic locations."
+  },
+  {
+    "name": "Tile Puzzle",
+    "slug": "tile-puzzle",
+    "image": "https://5u9qhnk84v07g.h5games.usercontent.goog/v/2h3elehja73a8/image/tilepuzzle-med-res-banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/5u9qhnk84v07g",
+    "description": "Classic tile sliding puzzles with modern visual polish."
+  },
+  {
+    "name": "Tiles of Egypt",
+    "slug": "tiles-of-egypt",
+    "image": "https://tilesofegypt.h5games.usercontent.goog/v/dd964fa3-8999-4546-a4a0-d55a0cc72248/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/tilesofegypt",
+    "description": "Uncover ancient Egyptian mysteries through archaeological tile puzzles."
+  },
+  {
+    "name": "Tiletopia",
+    "slug": "tiletopia",
+    "image": "https://6nilllqpgkm6o.h5games.usercontent.goog/v/7d3689i7s5gfo/MarketingAssets/tiletopia-thumb-wide-480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/6nilllqpgkm6o",
+    "description": "Create utopian tile arrangements in this city-building puzzle game."
+  },
+  {
+    "name": "Tower Crash 3D",
+    "slug": "tower-crash-3d",
+    "image": "https://towercrash3d.h5games.usercontent.goog/v/7c54afc1-3ca4-4121-a52a-9ea74e30f0d7/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/towercrash3d",
+    "description": "Demolish towering structures with physics-based 3D puzzles."
+  },
+  {
+    "name": "Train 2048",
+    "slug": "train-2048",
+    "image": "https://train2048.h5games.usercontent.goog/v/efebc769-0d8d-48f4-b437-af712b013132/med_res_banner.jpg=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/train2048",
+    "description": "Conductor train cars through 2048-style railway puzzles."
+  },
+  {
+    "name": "Tripeaks Solitaire",
+    "slug": "tripeaks-solitaire",
+    "image": "https://tripeakssolitaire.h5games.usercontent.goog/v/4v3d7g06n6rug/images/tripeaksfarm-horizontal-banner-2.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/tripeakssolitaire",
+    "description": "Classic TriPeaks solitaire with beautiful natural landscapes."
+  },
+  {
+    "name": "Unblock That",
+    "slug": "unblock-that",
+    "image": "https://unblockthat.h5games.usercontent.goog/v/6iqu63hhulkgo/marketing/title/unblockthat-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/unblockthat",
+    "description": "Free trapped objects through strategic block manipulation puzzles."
+  },
+  {
+    "name": "Unpark Me",
+    "slug": "unpark-me",
+    "image": "https://unparkme.h5games.usercontent.goog/v/7tbjega3nl8eg/marketing/title/unparkme-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/unparkme",
+    "description": "Navigate parking lot chaos with vehicle movement puzzles."
+  },
+  {
+    "name": "Word Detector",
+    "slug": "word-detector",
+    "image": "https://worddetector.h5games.usercontent.goog/v/4gaf9ej9hp398/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "word",
+    "iframe": "https://gamesnacks.com/games/worddetector",
+    "description": "Hunt for hidden words in challenging letter grid puzzles."
+  },
+  {
+    "name": "Word Pics",
+    "slug": "word-pics",
+    "image": "https://wordpics.h5games.usercontent.goog/v/0s44ldeacb2bo/image/wordpics-med-res-banner.jpg=w256?v=1",
+    "category": "word",
+    "iframe": "https://gamesnacks.com/games/wordpics",
+    "description": "Solve word puzzles using visual clues and creative imagery."
+  },
+  {
+    "name": "Word Search",
+    "slug": "word-search",
+    "image": "https://wordsearch.h5games.usercontent.goog/v/6abe3eefqt368/image/wordsearch-med-res-banner.jpg=w256?v=1",
+    "category": "word",
+    "iframe": "https://gamesnacks.com/games/wordsearch",
+    "description": "Find hidden words in beautifully designed letter grids."
+  },
+  {
+    "name": "Words of Magic",
+    "slug": "words-of-magic",
+    "image": "https://5a5rs5ng5rvro.h5games.usercontent.goog/v/4grqmc17b1kc0/images/wom-horizontal-banner-2.png=w256?v=1",
+    "category": "word",
+    "iframe": "https://gamesnacks.com/games/5a5rs5ng5rvro",
+    "description": "Cast spelling spells with magical word formation puzzles."
+  },
+  {
+    "name": "Zoo Boom",
+    "slug": "zoo-boom",
+    "image": "https://zooboom.h5games.usercontent.goog/v/4g2tps61g9djg/html5games/assets/marketingAssets/banners/480x270.png=w256?v=1",
+    "category": "match",
+    "iframe": "https://gamesnacks.com/games/zooboom",
+    "description": "Match adorable zoo animals in this explosive puzzle adventure."
+  },
+  {
+    "name": "Zumba Ocean",
+    "slug": "zumba-ocean",
+    "image": "https://zumbaocean.h5games.usercontent.goog/v/1gb65icesunig/marketing/title/zumbaocean-html5_480x270.png=w256?v=1",
+    "category": "puzzle",
+    "iframe": "https://gamesnacks.com/games/zumbaocean",
+    "description": "Rhythm-based ocean puzzles with marine-themed Zuma gameplay."
+  }
+];
+
+        // Game state
+        let currentPage = 0;
+        const gamesPerPage = 12;
+        let filteredGames = [...gameDatabase];
+
+        // Enhanced premium game card renderer
+        function renderGames(gamesToRender) {
+            const grid = document.getElementById('gamesGrid');
+            
+            gamesToRender.forEach((game, index) => {
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer group transform hover:shadow-2xl transition-all duration-500';
+                gameCard.style.animationDelay = `${index * 100}ms`;
+                gameCard.classList.add('animate-fade-in');
+                gameCard.onclick = () => window.location.href = `${game.slug}.html`;
+                
+                gameCard.innerHTML = `
+                    <div class="relative aspect-video bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+                        <img src="${game.image}" alt="${game.name}" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml,<svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"480\\" height=\\"270\\" viewBox=\\"0 0 480 270\\"><defs><linearGradient id=\\"grad\\" x1=\\"0%\\" y1=\\"0%\\" x2=\\"100%\\" y2=\\"100%\\"><stop offset=\\"0%\\" style=\\"stop-color:%23667eea;stop-opacity:1\\" /><stop offset=\\"100%\\" style=\\"stop-color:%23764ba2;stop-opacity:1\\" /></linearGradient></defs><rect width=\\"480\\" height=\\"270\\" fill=\\"url(%23grad)\\"/><text x=\\"240\\" y=\\"135\\" text-anchor=\\"middle\\" dominant-baseline=\\"middle\\" font-family=\\"Arial\\" font-size=\\"18\\" fill=\\"white\\" font-weight=\\"bold\\">${game.name}</text></svg>'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 8h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 mb-2 text-lg group-hover:text-indigo-600 transition-colors duration-300">${game.name}</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-2">${game.description}</p>
+                        <div class="flex items-center justify-between">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-700 border border-indigo-200">
+                                🧩 Premium Puzzle
+                            </span>
+                            <div class="flex items-center text-indigo-600 font-medium text-sm group-hover:text-indigo-700 transition-colors">
+                                <span>Play Now</span>
+                                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(gameCard);
+            });
+        }
+
+        function loadMoreGames() {
+            const startIndex = currentPage * gamesPerPage;
+            const endIndex = startIndex + gamesPerPage;
+            const gamesToLoad = filteredGames.slice(startIndex, endIndex);
+            
+            renderGames(gamesToLoad);
+            currentPage++;
+            
+            if (endIndex >= filteredGames.length) {
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = 'none';
+                }
+            }
+        }
+
+        // Search functionality
+        document.getElementById('searchInput')?.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            filteredGames = gameDatabase.filter(game => 
+                game.name.toLowerCase().includes(query) ||
+                game.description.toLowerCase().includes(query)
+            );
+            
+            const grid = document.getElementById('gamesGrid');
+            if (grid) {
+                grid.innerHTML = '';
+            }
+            currentPage = 0;
+            if (filteredGames.length > 0) {
+                loadMoreGames();
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = filteredGames.length > gamesPerPage ? 'block' : 'none';
+                }
+            }
+        });
+
+        // Category filter
+        document.getElementById('categoryFilter')?.addEventListener('change', function(e) {
+            const category = e.target.value;
+            filteredGames = category ? 
+                gameDatabase.filter(game => game.category === category) : 
+                [...gameDatabase];
+            
+            const grid = document.getElementById('gamesGrid');
+            if (grid) {
+                grid.innerHTML = '';
+            }
+            currentPage = 0;
+            loadMoreGames();
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = filteredGames.length > gamesPerPage ? 'block' : 'none';
+            }
+        });
+
+        // Load more button
+        document.getElementById('loadMoreBtn')?.addEventListener('click', loadMoreGames);
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMoreGames();
+        });
+
+        // Premium loading animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
