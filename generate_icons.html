@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaveAllPuzzles - Icon Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .icon-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .favicon-preview {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .logo-preview {
+            margin: 20px 0;
+        }
+        h1, h2 {
+            color: #334155;
+            text-align: center;
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 HaveAllPuzzles - Icons Generator</h1>
+        
+        <div class="icon-container">
+            <h2>Favicon (32x32)</h2>
+            <div class="favicon-preview">
+                <canvas id="favicon32" width="32" height="32" style="border: 1px solid #ccc; image-rendering: pixelated; width: 64px; height: 64px;"></canvas>
+                <br>
+                <button class="download-btn" onclick="downloadFavicon(32)">Download 32x32</button>
+            </div>
+            
+            <div class="favicon-preview">
+                <canvas id="favicon16" width="16" height="16" style="border: 1px solid #ccc; image-rendering: pixelated; width: 64px; height: 64px;"></canvas>
+                <br>
+                <button class="download-btn" onclick="downloadFavicon(16)">Download 16x16</button>
+            </div>
+        </div>
+
+        <div class="logo-preview">
+            <h2>Organization Logo (512x512)</h2>
+            <canvas id="logo512" width="512" height="512" style="border: 1px solid #ccc; max-width: 300px; max-height: 300px;"></canvas>
+            <br>
+            <button class="download-btn" onclick="downloadLogo()">Download Logo 512x512</button>
+        </div>
+
+        <div class="logo-preview">
+            <h2>Apple Touch Icon (180x180)</h2>
+            <canvas id="apple180" width="180" height="180" style="border: 1px solid #ccc; max-width: 180px; max-height: 180px;"></canvas>
+            <br>
+            <button class="download-btn" onclick="downloadApple()">Download Apple Touch Icon</button>
+        </div>
+    </div>
+
+    <script>
+        // Draw favicon 32x32
+        function drawFavicon32() {
+            const canvas = document.getElementById('favicon32');
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 32, 32);
+            
+            // Add puzzle piece shape
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(8, 8, 16, 16);
+            
+            // Create puzzle piece notches
+            ctx.fillStyle = gradient;
+            ctx.fillRect(14, 8, 4, 6);
+            ctx.fillRect(8, 14, 6, 4);
+            
+            // Add highlight
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.fillRect(8, 8, 16, 2);
+        }
+
+        // Draw favicon 16x16
+        function drawFavicon16() {
+            const canvas = document.getElementById('favicon16');
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 16, 16);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 16, 16);
+            
+            // Add simple puzzle piece
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(4, 4, 8, 8);
+            
+            // Create puzzle piece notch
+            ctx.fillStyle = gradient;
+            ctx.fillRect(7, 4, 2, 3);
+        }
+
+        // Draw organization logo 512x512
+        function drawLogo512() {
+            const canvas = document.getElementById('logo512');
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 512, 512);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 512, 512);
+            
+            // Add border radius effect
+            ctx.globalCompositeOperation = 'destination-in';
+            ctx.beginPath();
+            ctx.roundRect(0, 0, 512, 512, 50);
+            ctx.fill();
+            ctx.globalCompositeOperation = 'source-over';
+            
+            // Draw large puzzle piece
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(128, 128, 256, 256);
+            
+            // Create puzzle piece notches and tabs
+            ctx.fillStyle = gradient;
+            ctx.fillRect(224, 128, 64, 96);
+            ctx.fillRect(128, 224, 96, 64);
+            
+            // Add circular tabs
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(256, 80, 32, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(80, 256, 32, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Add text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('H', 256, 480);
+            
+            // Add subtitle
+            ctx.font = 'bold 24px Arial';
+            ctx.fillText('HaveAllPuzzles', 256, 510);
+        }
+
+        // Draw Apple Touch Icon 180x180
+        function drawApple180() {
+            const canvas = document.getElementById('apple180');
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 180, 180);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 180, 180);
+            
+            // Add border radius for iOS style
+            ctx.globalCompositeOperation = 'destination-in';
+            ctx.beginPath();
+            ctx.roundRect(0, 0, 180, 180, 20);
+            ctx.fill();
+            ctx.globalCompositeOperation = 'source-over';
+            
+            // Draw puzzle piece
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(45, 45, 90, 90);
+            
+            // Create puzzle piece features
+            ctx.fillStyle = gradient;
+            ctx.fillRect(78, 45, 24, 36);
+            ctx.fillRect(45, 78, 36, 24);
+            
+            // Add highlight
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.fillRect(45, 45, 90, 10);
+        }
+
+        // Download functions
+        function downloadFavicon(size) {
+            const canvas = document.getElementById(`favicon${size}`);
+            const link = document.createElement('a');
+            link.download = `favicon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        function downloadLogo() {
+            const canvas = document.getElementById('logo512');
+            const link = document.createElement('a');
+            link.download = 'organization-logo-512x512.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        function downloadApple() {
+            const canvas = document.getElementById('apple180');
+            const link = document.createElement('a');
+            link.download = 'apple-touch-icon-180x180.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Initialize
+        drawFavicon32();
+        drawFavicon16();
+        drawLogo512();
+        drawApple180();
+    </script>
+</body>
+</html>
