@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://haveallpuzzles.online/sitemap.xml
+
+# Allow all crawlers to access all content
+# Optimized for search engines
+
+# Block access to admin files and scripts
+Disallow: /add_google_analytics.js
+Disallow: /apply_premium_design.js
+Disallow: /fix_responsive_layout.js
+Disallow: /generate_sitemap.js
+Disallow: /create_data_icons.js
+Disallow: /*.js$
+
+# Allow important files
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /sitemap.xml
+Allow: /site.webmanifest
+Allow: /*.html$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
